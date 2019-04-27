@@ -1,6 +1,8 @@
 package br.com.projetoArtigo;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,33 @@ public class ProjetoArtigo extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter out = response.getWriter();
+		out.print("<html>");
+		out.print("<head>");
+		out.print("<title>Formulário</title>");
+		out.print("</head>");
+		out.print("<body>");
+		out.print("<h1>Formulário de Cadastro</h1>");
+		
+		String nome = (String) request.getParameter("nome");
+		String sobrenome = (String) request.getParameter("sobrenome");
+		if(nome !=null && sobrenome != null) {
+			out.print("Nome: " + nome + "<br>");
+			out.print("Sobrenome: " + sobrenome + "<br>");
+		}
+		
+		out.print("<form name=\"RequestForm\"method=get");
+		
+		out.print("Nome: <input type='text' name='nome' size='20'><br>");
+		out.print("Nome: <input type='text' name='nome' size='20'><br>");
+		out.print("Sobrenome: <input type='text' name='sobrenome' size='20'><br>");
+		out.print("<input type='submit' nome='btSend' value='Enviar'><br>");
+		out.print("<input type='reset' nome='btClear' value='Limpar'><br>");
+		out.print("</form>");
+		out.print("</body>");
+		out.print("</html>");
+		out.close();
+	
 	}
 
 }
