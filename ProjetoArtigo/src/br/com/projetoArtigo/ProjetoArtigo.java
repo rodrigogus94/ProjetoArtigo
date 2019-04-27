@@ -32,10 +32,10 @@ public class ProjetoArtigo extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print("<html>");
 		out.print("<head>");
-		out.print("<title>Formul√°rio</title>");
+		out.print("<title>Formul·rio</title>");
 		out.print("</head>");
 		out.print("<body>");
-		out.print("<h1>Formul√°rio de Cadastro</h1>");
+		out.print("<h1>Formul·rio de Cadastro</h1>");
 		
 		String nome = (String) request.getParameter("nome");
 		String sobrenome = (String) request.getParameter("sobrenome");
@@ -46,9 +46,13 @@ public class ProjetoArtigo extends HttpServlet {
 		
 		out.print("<form name=\"RequestForm\"method=get");
 		
-		out.print("Nome: <input type='text' name='nome' size='20'><br>");
-		out.print("Nome: <input type='text' name='nome' size='20'><br>");
-		out.print("Sobrenome: <input type='text' name='sobrenome' size='20'><br>");
+		out.print("TÌtulo:           <input type='text' name='titulo:' size='20'><br>");
+		out.print("Nomo do Autores:  <input type='text' name='nomoAutores' size='20'><br>");
+		out.print("Journal/Evento:   <input type='text' name='journalEvento' size='20'><br>");
+		out.print("P·ginas:          <input type='text' name='paginas' size='20'><br>");
+		out.print("DOI:              <input type='text' name='doi' size='20'><br>");
+		out.print("ISBN:             <input type='text' name='isbn' size='20'><br>");
+	
 		out.print("<input type='submit' nome='btSend' value='Enviar'><br>");
 		out.print("<input type='reset' nome='btClear' value='Limpar'><br>");
 		out.print("</form>");
