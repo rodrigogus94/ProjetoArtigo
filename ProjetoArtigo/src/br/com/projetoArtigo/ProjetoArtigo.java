@@ -46,7 +46,7 @@ public class ProjetoArtigo extends HttpServlet {
 		
 		out.print("<form name=\"RequestForm\"method=get");
 		
-		out.print("Título:           <input type='text' name='titulo:' size='20'><br>");
+		out.print("Título:          <input type='text' name='titulo:' size='20'><br>");
 		out.print("Nomo do Autores:  <input type='text' name='nomoAutores' size='20'><br>");
 		out.print("Journal/Evento:   <input type='text' name='journalEvento' size='20'><br>");
 		out.print("Páginas:          <input type='text' name='paginas' size='20'><br>");
