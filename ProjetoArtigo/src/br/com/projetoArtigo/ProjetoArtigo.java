@@ -30,6 +30,7 @@ public class ProjetoArtigo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	response.setContentType("text/html; charset	= UTF-8 ");
     	response.setCharacterEncoding("UTF-8");
+    	response.getWriter().append("está aq ").append(request.getContextPath());
     	
     	ArrayList<Artigos> artigos = new ArrayList<Artigos>();
     	
@@ -46,12 +47,29 @@ public class ProjetoArtigo extends HttpServlet {
     	
    
     }
-    
-    
+       
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		response.setContentType("text/html; charset	= UTF-8 ");
+    	response.setCharacterEncoding("UTF-8");
+    	response.getWriter().append("está aq ").append(request.getContextPath());
+    	
+    	ArrayList<Artigos> artigos = new ArrayList<Artigos>();
+    	
+    	artigos.add(new Artigos(1, "nada", "Rodrigo", "tudo", "500", "nada", "nada" ));
+    	artigos.add(new Artigos(2, "nada", "Rodrigo", "tudo", "500", "nada", "nada" ));
+    	
+    	request.setAttribute("artigos", artigos);
+    	
+    	String pagina = "/listagem.jsp";
+    	
+    	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
+    	dispatcher.forward(request, response);
+    	
+    	
+   
 		
 		
 
