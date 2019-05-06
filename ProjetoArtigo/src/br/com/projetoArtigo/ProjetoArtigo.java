@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Classes.Artigos;
 import Classes.ArtigosImpl;
-import DAO.DAO;
-import DAO.DAOImpl;
+
 
 /**implementation class ProjetoArtigo
  **/
@@ -31,41 +30,9 @@ public class ProjetoArtigo extends HttpServlet {
     
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	  
-        String Titulo = request.getParameter("titulo");
-        String NomeAutores = request.getParameter("nomeAutores");
-       
-
-
- 
-     
-        
-        Artigos a = new ArtigosImpl();
-     
-        a.setTitulo(Titulo);
-        a.setNomeAutores(NomeAutores);
-        
-        response.setContentType("text/html;charset=UTF-8");s
-        
-        
-       
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Livraria</title>");
-            
-            out.println("</head>");
-            
-            out.println("<body>");
-            out.println("<h1>Concluido como sucesso </h1>");
-            out.println("<a href=\"index.html\" >Voltar</a>");
-            
-            out.println("</body>");
-            out.println("</html>"); 
-  
     
-      
+    
+    }   
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -74,12 +41,15 @@ public class ProjetoArtigo extends HttpServlet {
     	response.setCharacterEncoding("UTF-8");
     	response.getWriter().append("está aq ").append(request.getContextPath());
     	
-    	DAO dao = new DAOImpl();
-    	Artigos a = new ArtigosImpl();
+    	ArrayList<ArtigosImpl> artigo = new ArrayList<ArtigosImpl>();
+    	ArtigosImpl a =new ArtigosImpl();
     	
-    	ArrayList<Artigos> artigo = new ArrayList<Artigos>();
+    	for (int i = 0; i < artigo.size(); i++) {
+			a.setId(i);
+		}
+    
     	
-    	request.setAttribute("artigos", dao);
+    	request.setAttribute("artigo", artigo);
     	
     	String pagina = "/adicionarArtigos.html";
     	
