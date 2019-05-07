@@ -1,5 +1,9 @@
 package Classes;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ArtigosImpl implements Artigos {
 	
@@ -120,7 +124,28 @@ public class ArtigosImpl implements Artigos {
 	}
 	
 	
-	
+	public String salvar() {
+		
+		try {
+			
+			FileWriter fw = new FileWriter("Artigos.txt",true);
+			PrintWriter pw = new PrintWriter(fw);
+			pw.println("Titulo: " + this.titulo);
+			pw.println("Nome Autores: " + this.nomeAutores);
+			pw.println("Journal/Evento: " + this.journalEvento);
+			pw.println("Paginas: " + this.paginas);
+			pw.println("DOI: " + this.doi);
+			pw.println("ISBN: " + this.isbn);
+			
+			
+		}catch (Exception e) {
+			Logger.getLogger(ArtigosImpl.class.getName()).log(Level.SEVERE, null, e);
+		}
+		
+		
+		
+		return "Cadastro com Sucesso!";
+	}
 	
 	
 

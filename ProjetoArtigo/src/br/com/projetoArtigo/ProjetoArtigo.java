@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import Classes.Artigos;
 import Classes.ArtigosImpl;
+import DAO.DAO;
+import DAO.DAOImpl;
 
 
 /**implementation class ProjetoArtigo
@@ -41,21 +43,22 @@ public class ProjetoArtigo extends HttpServlet {
     	response.setCharacterEncoding("UTF-8");
     	response.getWriter().append("está aq ").append(request.getContextPath());
     	
-    	ArrayList<ArtigosImpl> artigo = new ArrayList<ArtigosImpl>();
-    	ArtigosImpl a =new ArtigosImpl();
     	
-    	for (int i = 0; i < artigo.size(); i++) {
-			a.setId(i);
-		}
-    
-    	
-    	request.setAttribute("artigo", artigo);
-    	
-    	String pagina = "/adicionarArtigos.html";
-    	
-    	RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
+		DAO dao = new DAOImpl();
+		ArtigosImpl artigos = new ArtigosImpl();
+		
+	
+		
+		
+		System.out.println("passou aqui");
+		
+		String pagina = "/adicionarArtigos.jsp";
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
     	dispatcher.forward(request, response);
     	
+		//response.sendRedirect(pagina);
+		
     	
    
 		

@@ -7,11 +7,8 @@ import javax.swing.JOptionPane;
 
 import Classes.Artigos;
 
-
-
 public class DAOImpl implements DAO {
-	
-	
+
 	private List<Artigos> dados;
 
 	public DAOImpl() {
@@ -32,14 +29,14 @@ public class DAOImpl implements DAO {
 
 	public void alterar(Artigos a) {
 		for (Artigos artigo : dados) {
-			if(artigo.getId() != a.getId()) {
+			if (artigo.getId() != a.getId()) {
 				JOptionPane.showMessageDialog(null, "O Id não tem animal cadastrado, gostaria de cadastrar?");
-			}else {
+			} else {
 				JOptionPane.showMessageDialog(null, "Alterado com sucesso!");
 			}
-			
+
 		}
-		
+
 	}
 
 	public int excluir(int... ids) {
@@ -48,16 +45,19 @@ public class DAOImpl implements DAO {
 	}
 
 	public Artigos pesquisar(int id) {
-		// TODO Auto-generated method stub
+		for (Artigos artigos : dados) {
+			if (artigos.getId() == id) {
+				System.out.println("here");
+			}
+		}
 		return null;
 	}
 
 	public List<Artigos> listarTodos() {
-		// TODO Auto-generated method stub
+		for (Artigos artigos : dados) {
+			artigos.getTitulo();
+		}
 		return null;
 	}
-
-
-	
 
 }
