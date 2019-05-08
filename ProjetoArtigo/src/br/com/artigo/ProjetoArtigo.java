@@ -1,4 +1,4 @@
-package br.com.projetoArtigo;
+package br.com.artigo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Classes.Artigos;
-import Classes.ArtigosImpl;
-import DAO.DAO;
-import DAO.DAOImpl;
+
 
 
 /**implementation class ProjetoArtigo
@@ -44,20 +42,34 @@ public class ProjetoArtigo extends HttpServlet {
     	response.getWriter().append("está aq ").append(request.getContextPath());
     	
     	
-		DAO dao = new DAOImpl();
-		ArtigosImpl artigos = new ArtigosImpl();
+    	
+    	
+    	
+    	
+    	ArrayList<Artigos> artigos = new ArrayList<Artigos>();
+    	Artigos artigo = new Artigos();
+    	for(int i=0; i < artigos.size(); i++ ) {
+    		artigo.setTitulo(request.getParameter("titulo"));
+    		artigo.setNomeAutores(request.getParameter("nomeAutores"));
+    		artigo.setJournalEvento(request.getParameter("journalEvento"));
+    		artigo.setPaginas(request.getParameter("paginas"));
+    		artigo.setDoi(request.getParameter("doi"));
+    		artigo.setIsbn(request.getParameter("isbn"));
+    		artigos.add(artigo);
+    	}
+    	
+    	artigos.add(new Artigos(1, "nada", "Rdoigo", "nada", "10", "asd", "asda"));
+    	artigos.add(new Artigos(2, "nada", "Alisson", "nada", "10", "asd", "asda"));
+    	
+    	request.setAttribute("artigos", artigos);
 		
-	
+		String pagina = "/lista.jsp";
 		
 		
-		System.out.println("passou aqui");
-		
-		String pagina = "/adicionarArtigos.jsp";
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
     	dispatcher.forward(request, response);
     	
-		//response.sendRedirect(pagina);
 		
     	
    

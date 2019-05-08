@@ -1,25 +1,17 @@
 <%@page import="Classes.Artigos"%>
-<%@page import="DAO.DAOImpl"%>
-<%@page import="DAO.DAO"%>
-<%@page import="Classes.ArtigosImpl"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
 <%
-	
-	Artigos artigos = new ArtigosImpl();
-	ArrayList<ArtigosImpl> a = new ArrayList<ArtigosImpl>();
+	Artigos artigo = new Artigos();
 
-	artigos.setTitulo(request.getParameter("titulo"));
-	artigos.setNomeAutores(request.getParameter("nomeAutores"));
-	artigos.setJournalEvento(request.getParameter("journalEvento"));
-	artigos.setPaginas(request.getParameter("paginas"));
-	artigos.setDoi(request.getParameter("doi"));
-	artigos.setIsbn(request.getParameter("isbn"));
-
-	DAO dao = new DAOImpl();
-	dao.inserir(artigos);
+	artigo.setTitulo(request.getParameter("titulo"));
+	artigo.setNomeAutores(request.getParameter("nomeAutores"));
+	artigo.setJournalEvento(request.getParameter("journalEvento"));
+	artigo.setPaginas(request.getParameter("paginas"));
+	artigo.setDoi(request.getParameter("doi"));
+	artigo.setIsbn(request.getParameter("isbn"));
 %>
 
 <!DOCTYPE html>
@@ -30,7 +22,7 @@
 </head>
 <body>
 
-	<form name="formArtigo" action="listagem.jsp" method="post">
+	<form name="formArtigo" action="lista.jsp" method="post">
 
 
 		<table>
