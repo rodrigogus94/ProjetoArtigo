@@ -19,37 +19,37 @@
 	<form name="MeuFormulario" action="display.jsp" method="post">
 		<table border="0">
 			<tbody>
-
-				<tr>
-					<td>Titulo:</td>
-					<td><input type="text" name="titulo" value="" size="50" /></
-					
-				</tr>
-
-				<tr>
-					<td>Autores:</td>
-					<td><input type="text" name="autores" value="" size="50" /></
-					
-				</tr>
-				<tr>
+			
+			
+			<tr>
+				<td>Título</td>
+				<td><input type="text" name="titulo" /></td>
+			</tr>
+			<tr>
+				<td>Nome do Autores</td>
+				<td><input type="text" name="nomeAutores" /></td>
+			</tr>
+			<tr>
 					<td>JornalEvento:</td>
 					<td><select name="jornalouevento">
 							<option>Jornal</option>
 							<option>Evento</option>
 					</select></td>
 				</tr>
-				<td>Ano:</td>
-				<td><input type="text" name="ano" value="" size="50" /></
-					</tr>
-					<td>Paginas:</td>
-					<td><input type="text" name="paginas" value="" size="50" /></
-						</tr>
-						<td>Doi:</td>
-						<td><input type="text" name="doi" value="" size="50" /></
-							</tr>
-							<td>iisbn:</td>
-							<td><input type="text" name="isbn" value="" size="50" /></
-								</tr>
+			<tr>
+				<td>Páginas</td>
+				<td><input type="text" name="paginas" /></td>
+			</tr>
+			<tr>
+				<td>DOI</td>
+				<td><input type="text" name="doi" /></td>
+			</tr>
+
+			<tr>
+				<td>ISBN</td>
+				<td><input type="text" name="isbn" /></td>
+			</tr>
+			
 			</tbody>
 			
 			<tr>

@@ -42,8 +42,6 @@ public class ProjetoArtigo extends HttpServlet {
 		ArrayList<Artigos> artigos = new ArrayList<Artigos>();
 		Artigos artigo = new Artigos();
 
-		artigos.add(new Artigos(1, "nada", "Rdoigo", "nada", "10", "asd", "asda"));
-		artigos.add(new Artigos(2, "nada", "Alisson", "nada", "10", "asd", "asda"));
 
 		artigo.setTitulo(request.getParameter("titulo"));
 		artigo.setNomeAutores(request.getParameter("nomeAutores"));
