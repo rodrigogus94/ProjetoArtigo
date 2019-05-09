@@ -136,7 +136,9 @@ public class Artigos {
 			pw.println("Paginas: " + this.paginas);
 			pw.println("DOI: " + this.doi);
 			pw.println("ISBN: " + this.isbn);
-			
+			pw.flush();
+			pw.close();
+			fw.close();
 			
 		}catch (Exception e) {
 			Logger.getLogger(Artigos.class.getName()).log(Level.SEVERE, null, e);
