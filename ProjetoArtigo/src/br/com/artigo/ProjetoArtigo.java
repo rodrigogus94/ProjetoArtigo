@@ -54,7 +54,7 @@ public class ProjetoArtigo extends HttpServlet {
 
 		request.setAttribute("artigos", artigos);
 
-		String pagina = "/lista.jsp";
+		String pagina = "/display.jsp";
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
 		dispatcher.forward(request, response);
