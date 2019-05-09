@@ -41,17 +41,18 @@ public class ProjetoArtigo extends HttpServlet {
 
 		ArrayList<Artigos> artigos = new ArrayList<Artigos>();
 		Artigos artigo = new Artigos();
-
-
+		int cont = artigos.size();
+		for(int i=0; i< cont; i++) {
 		artigo.setTitulo(request.getParameter("titulo"));
 		artigo.setNomeAutores(request.getParameter("nomeAutores"));
 		artigo.setJournalEvento(request.getParameter("journalEvento"));
 		artigo.setPaginas(request.getParameter("paginas"));
+		artigo.setAno(request.getParameter("ano"));
 		artigo.setDoi(request.getParameter("doi"));
 		artigo.setIsbn(request.getParameter("isbn"));
 		artigos.add(artigo);
 		artigo.salvar();
-
+	}
 		request.setAttribute("artigos", artigos);
 
 		String pagina = "/display.jsp";

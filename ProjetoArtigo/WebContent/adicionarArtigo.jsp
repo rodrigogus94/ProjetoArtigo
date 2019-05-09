@@ -41,6 +41,10 @@
 				<td><input type="text" name="paginas" /></td>
 			</tr>
 			<tr>
+				<td>Ano</td>
+				<td><input type="text" name="ano" /></td>
+			</tr>
+			<tr>
 				<td>DOI</td>
 				<td><input type="text" name="doi" /></td>
 			</tr>

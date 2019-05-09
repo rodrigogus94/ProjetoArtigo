@@ -50,7 +50,7 @@
 		String Paginas = request.getParameter("paginas");
 		String Ano = request.getParameter("ano");
 		String Doi = request.getParameter("doi");
-		String iisbn = request.getParameter("isbn");
+		String isbn = request.getParameter("isbn");
 	%>
 	<table border="1">
 		<tbody>
@@ -60,6 +60,7 @@
 				<td>Autores:</td>
 				<td>JornalEvento:</td>
 				<td>Paginas:</td>
+				<td>Ano:</td>
 				<td>DOI:</td>
 				<td>ISBN:</td>
 				
@@ -72,8 +73,9 @@
 				<td><%=Autores%></td>
 				<td><%=JornalEvento%></td>
 				<td><%=Paginas%></td>
+				<td><%=Ano%></td>
 				<td><%=Doi%></td>
-				<td><%=iisbn%></td>
+				<td><%=isbn%></td>
 			</tr>
 		
 

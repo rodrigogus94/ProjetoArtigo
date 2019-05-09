@@ -12,12 +12,13 @@ public class Artigos {
 	private String nomeAutores;
 	private String journalEvento;
 	private String paginas;
+	private String ano;
 	private String doi;
 	private String isbn;
 	
 	
 	
-	public Artigos(int id, String titulo, String nomeAutores, String journalEvento, String paginas, String doi,String isbn) {
+	public Artigos(int id, String titulo, String nomeAutores, String journalEvento, String paginas, String ano, String doi,String isbn) {
 		
 		
 		this.id = id;
@@ -25,6 +26,7 @@ public class Artigos {
 		this.nomeAutores = nomeAutores;
 		this.journalEvento = journalEvento;
 		this.paginas = paginas;
+		this.ano = ano;
 		this.doi = doi;
 		this.isbn = isbn;
 	}
@@ -121,6 +123,16 @@ public class Artigos {
 
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
+	}
+	
+	public String getAno() {
+		return ano;
+	}
+
+
+
+	public void setAno(String ano) {
+		this.ano = ano;
 	}
 	
 	
