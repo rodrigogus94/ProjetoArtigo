@@ -52,6 +52,7 @@ public class ProjetoArtigo extends HttpServlet {
 		artigo.setIsbn(request.getParameter("isbn"));
 		artigos.add(artigo);
 		artigo.salvar();
+		System.out.println("HAKUNA MATATA");
 	}
 		request.setAttribute("artigos", artigos);
 
